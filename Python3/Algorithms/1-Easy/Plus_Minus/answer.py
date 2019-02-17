@@ -26,7 +26,6 @@ def plusMinus(arr):
     print(neg/size)
     print(zero/size)
 
-
 if __name__ == '__main__':
     n = int(input())
 

@@ -15,7 +15,6 @@ def staircase(n):
         hashes += 1
         spaces -= 1
 
-
 if __name__ == '__main__':
     n = int(input())
 

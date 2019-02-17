@@ -19,8 +19,6 @@ def diagonalDifference(arr):
 
     return abs(left_diag - right_diag)
 
-
-
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 

@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import os
 import sys
 
@@ -6,15 +8,12 @@ import sys
 #
 def timeConversion(s):
     time_list = s.split(':')
-    # For PM
     if time_list[2][-2]=='P':
-        # Check for 12 PM
         if time_list[0]=='12':
             time_list[0]='00'
         time_list[0] = int(time_list[0]) + 12
         time_list[2] = time_list[2][0:2]
         return str(time_list[0]) + ':' + str(time_list[1]) + ':' + str(time_list[2])
-    # Check for 12 AM
     elif time_list[0] == '12':
         time_list[0] = '00'
         time_list[2] = time_list[2][0:2]
@@ -22,4 +21,14 @@ def timeConversion(s):
     else:
         return s[0:-2]
 
-print(timeConversion('12:00:00AM'))
+
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()

@@ -15,9 +15,6 @@ def miniMaxSum(arr):
 
     print(f"{min} {max}")
 
-
-
-
 if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
 
