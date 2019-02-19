@@ -1,25 +1,18 @@
 #!/bin/python3
-
+# https://www.hackerrank.com/challenges/time-conversion/problem
 import os
 import sys
 
-#
-# Complete the timeConversion function below.
-#
 def timeConversion(s):
-    time_list = s.split(':')
-    if time_list[2][-2]=='P':
-        if time_list[0]=='12':
-            time_list[0]='00'
-        time_list[0] = int(time_list[0]) + 12
-        time_list[2] = time_list[2][0:2]
-        return str(time_list[0]) + ':' + str(time_list[1]) + ':' + str(time_list[2])
-    elif time_list[0] == '12':
-        time_list[0] = '00'
-        time_list[2] = time_list[2][0:2]
-        return str(time_list[0]) + ':' + str(time_list[1]) + ':' + str(time_list[2])
-    else:
-        return s[0:-2]
+    # PM
+    if s[-2:-1]=='P':
+        if s[:2]=='12':
+            return '12' + s[2:-2]
+        return str(int(s[:2])+12) + s[2:-2]
+    # AM
+    if  s[:2] == '12':
+        return '00' + s[2:-2]
+    return s[0:-2]
 
 
 if __name__ == '__main__':
