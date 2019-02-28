@@ -1,5 +1,4 @@
 #!/bin/python3
-# NOT COMPLETE 29/30
 # https://www.hackerrank.com/challenges/kangaroo/problem?h_r=next-challenge&h_v=zen
 
 import math
@@ -10,7 +9,20 @@ import sys
 
 # Complete the kangaroo function below.
 def kangaroo(x1, v1, x2, v2):
-    if v1 < v2:
+
+    # OPTION 1: Brute force
+    # if v1 <= v2:
+    #     return 'NO'
+    # while True:
+    #     if x1 == x2:
+    #         return 'YES'
+    #     elif x1 > x2:
+    #         return 'NO'
+    #     x1 += v1
+    #     x2 += v2
+
+    # OPTION 2: Math
+    if v1 <= v2:
         return 'NO'
     if not (x1 - x2) % (v2 - v1) == 0:
         return 'NO'
