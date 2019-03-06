@@ -9,6 +9,24 @@ import sys
 
 # Complete the breakingRecords function below.
 def breakingRecords(scores):
+    highscore = None
+    lowscore = None
+    highbreak = 0
+    lowbreak = 0
+
+    for i in scores:
+        if highscore is None:
+            highscore = i
+            lowscore = i
+        else:
+            if i > highscore:
+                highscore = i
+                highbreak += 1
+            elif i < lowscore:
+                lowscore = i
+                lowbreak += 1
+    return [highbreak,lowbreak]
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
